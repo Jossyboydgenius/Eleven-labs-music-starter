@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light mode tokens - keeping for theme switching capability */
+  --background: oklch(0.98 0 0); /* Light background */
+  --foreground: oklch(0.15 0 0); /* Dark text */
+  --card: oklch(0.96 0 0); /* Light card background */
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(0.98 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.6 0.15 270); /* Purple primary */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.5 0 0); /* Gray secondary */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.4 0 0); /* Muted gray */
+  --muted-foreground: oklch(1 0 0);
+  --accent: oklch(0.65 0.2 330); /* Pink accent */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.4 0 0);
+  --input: oklch(0.18 0 0);
+  --ring: oklch(0.6 0.15 270);
+  --chart-1: oklch(0.45 0.2 240);
+  --chart-2: oklch(0.55 0.2 270);
+  --chart-3: oklch(0.65 0.15 60);
+  --chart-4: oklch(0.65 0.2 330);
+  --chart-5: oklch(0.6 0.15 150);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.18 0 0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.4 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.6 0.15 270);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.4 0 0);
+  --sidebar-ring: oklch(0.6 0.15 270);
+}
+
+.dark {
+  /* Updated dark mode tokens to match modern music interface design brief */
+  --background: oklch(0.15 0 0); /* #1f2937 equivalent - Primary dark background */
+  --foreground: oklch(1 0 0); /* #ffffff - Text color for readability */
+  --card: oklch(0.18 0 0); /* #2a2e35 equivalent - Background for cards and panels */
+  --card-foreground: oklch(1 0 0); /* #ffffff - Text color for cards */
+  --popover: oklch(0.18 0 0); /* #2a2e35 equivalent - Background for popovers */
+  --popover-foreground: oklch(1 0 0); /* #ffffff - Text color for popovers */
+  --primary: oklch(0.6 0.15 270); /* #8b5cf6 equivalent - Call-to-action buttons */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - Text color for primary buttons */
+  --secondary: oklch(0.5 0 0); /* #6b7280 equivalent - Secondary elements */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff - Text color for secondary elements */
+  --muted: oklch(0.4 0 0); /* #4b5563 equivalent - Muted text and elements */
+  --muted-foreground: oklch(0.8 0 0); /* Lighter text for muted elements */
+  --accent: oklch(0.65 0.2 330); /* #ec4899 equivalent - Accent color for highlights */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - Text color for accent elements */
+  --destructive: oklch(0.5 0.2 25); /* #be123c equivalent - Destructive actions */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - Text color for destructive actions */
+  --border: oklch(0.4 0 0); /* #4b5563 equivalent - Borders for inputs and cards */
+  --input: oklch(0.18 0 0); /* #2a2e35 equivalent - Background for input fields */
+  --ring: oklch(0.6 0.15 270); /* #8b5cf6 equivalent - Ring color for focused elements */
+  --chart-1: oklch(0.45 0.2 240); /* #1d4ed8 equivalent - Color for first chart element */
+  --chart-2: oklch(0.55 0.2 270); /* #9333ea equivalent - Color for second chart element */
+  --chart-3: oklch(0.65 0.15 60); /* #f59e0b equivalent - Color for third chart element */
+  --chart-4: oklch(0.65 0.2 330); /* #ec4899 equivalent - Color for fourth chart element */
+  --chart-5: oklch(0.6 0.15 150); /* #34d399 equivalent - Color for fifth chart element */
+  --sidebar: oklch(0.18 0 0); /* #2a2e35 equivalent - Background for sidebar */
+  --sidebar-foreground: oklch(1 0 0); /* #ffffff - Text color for sidebar */
+  --sidebar-primary: oklch(0.4 0 0); /* #4b5563 equivalent - Primary elements in sidebar */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - Text color for primary sidebar elements */
+  --sidebar-accent: oklch(0.6 0.15 270); /* #8b5cf6 equivalent - Accent for sidebar elements */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - Text color for sidebar accent */
+  --sidebar-border: oklch(0.4 0 0); /* #4b5563 equivalent - Border for sidebar */
+  --sidebar-ring: oklch(0.6 0.15 270); /* #8b5cf6 equivalent - Ring color for focused sidebar elements */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
